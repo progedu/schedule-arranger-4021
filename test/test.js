@@ -116,8 +116,8 @@ describe('/schedules/:scheduleId/users/:userId/candidates/:candidateId', () => {
                 Availability.findAll({
                   where: { scheduleId: scheduleId }
                 }).then((availabilities) => {
-                  assert.equal(availabilities.length, 1);
-                  assert.equal(availabilities[0].availability, 2);
+                  assert.strictEqual(availabilities.length, 1);
+                  assert.strictEqual(availabilities[0].availability, 2);
                   deleteScheduleAggregate(scheduleId, done, err);
                 });
               });
@@ -160,8 +160,8 @@ describe('/schedules/:scheduleId/users/:userId/comments', () => {
               Comment.findAll({
                 where: { scheduleId: scheduleId }
               }).then(comments => {
-                assert.equal(comments.length, 1);
-                assert.equal(comments[0].comment, 'testcomment');
+                assert.strictEqual(comments.length, 1);
+                assert.strictEqual(comments[0].comment, 'testcomment');
                 deleteScheduleAggregate(scheduleId, done, err);
               });
             });
